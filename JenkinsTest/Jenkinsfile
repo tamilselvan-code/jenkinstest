@@ -17,10 +17,10 @@ pipeline{
 			}
 		}
 		
-		stage('Install Stage'){
+		stage('Deploy Stage'){
 			steps{
 				withMaven(maven : 'Maven'){
-					bat 'mvn -f "./JenkinsTest/pom.xml" install'
+					bat 'mvn -f "./JenkinsTest/pom.xml" tomcat7:deploy'
 				}
 			}
 		}
