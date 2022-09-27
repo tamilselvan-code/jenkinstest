@@ -4,7 +4,7 @@ pipeline{
 		stage('Compile Stage'){
 			steps{
 				withMaven(maven : 'Maven'){
-					dir("/../.."){
+					dir("../../"){
 						bat 'mvn clean compile'
 					}
 				}
