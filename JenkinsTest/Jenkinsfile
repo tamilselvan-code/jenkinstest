@@ -4,9 +4,7 @@ pipeline{
 		stage('Compile Stage'){
 			steps{
 				withMaven(maven : 'Maven'){
-					dir("./JenkinsTest/"){
-						bat 'mvn clean compile'
-					}
+					bat 'mvn -f "./JenkinsTest/pom.xml" clean compile'
 				}
 			}
 		}
